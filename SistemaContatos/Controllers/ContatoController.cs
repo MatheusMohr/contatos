@@ -19,24 +19,6 @@ namespace SistemaContatos.Controllers
             return View(await _context.Contato.ToListAsync());
         }
 
-        // GET: Contato/Details/5
-        public async Task<IActionResult> Details(int? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var contato = await _context.Contato
-                .FirstOrDefaultAsync(m => m.Id == id);
-            if (contato == null)
-            {
-                return NotFound();
-            }
-
-            return View(contato);
-        }
-
         // GET: Contato/Create
         public IActionResult Create()
         {
@@ -59,7 +41,6 @@ namespace SistemaContatos.Controllers
             return View(contato);
         }
 
-        // GET: Contato/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
